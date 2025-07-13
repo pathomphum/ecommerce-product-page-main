@@ -1,0 +1,334 @@
+.product {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    gap: 0 50px;
+}
+
+.header_logo {
+    background-color: transparent;
+    border: 0px solid;
+}
+
+nav {
+    margin-top: 2px;
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    height: 90px;
+    border-bottom: 1px solid hsl(220, 14%, 75%);
+}
+
+ul li a {
+    text-decoration: none;
+    color: hsl(220, 13%, 13%);
+    padding-bottom: 31px;
+    /* ดันให้ border อยู่ต่ำลง */
+    border-bottom: 2px solid transparent;
+    /* เส้นโปร่งใสในเมนูปกติ */
+    transition: border-color 0.3s ease;
+}
+
+ul li a.active {
+    border-bottom: 4px solid hsl(26, 100%, 55%);
+    /* เส้นสีส้ม */
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.menu ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.menu ul a {
+    font-weight: 400;
+    text-decoration: none;
+    color: hsl(220, 13%, 13%);
+}
+
+.Profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+#avatar img {
+    width: 50px;
+    height: 50px;
+}
+
+#avatar:active img {
+    padding: 1px;
+    /* ทำให้พื้นหลังมีพื้นที่ */
+    background-color: hsl(26, 100%, 55%);
+    border-radius: 25px;
+    box-sizing: border-box;
+    /* ป้องกัน padding บวกเพิ่มขนาด */
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.Product_details {
+    display: flex;
+    flex-direction: column;
+}
+
+.Product_picture {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: auto;
+    gap: 20px;
+}
+
+.main_picture {
+    border: 0px solid;
+    background-color: transparent;
+}
+
+.main_picture img {
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+}
+
+.picture_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.image_thumbnail {
+    position: relative;
+    /* เพื่อให้ .filter ตั้งตำแหน่งแบบ absolute ได้ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0px solid;
+    width: 85px;
+    height: 85px;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    /* กันสีล้น */
+}
+
+.filter {
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    background-color: transparent;
+}
+
+.image_thumbnail:hover .filter {
+    background-color: hsla(230, 60%, 98%, 0.5);
+}
+
+.filter.active_picture {
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 2px hsl(26, 100%, 55%);
+    background-color: hsla(230, 60%, 98%, 0.75);
+}
+
+.image_thumbnail img {
+    width: 85px;
+    height: 85px;
+    border-radius: 10px;
+}
+
+.New_price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 30px;
+    gap: 10px;
+}
+
+.New_price p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 25px;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 5px;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 0%);
+}
+
+.Add_cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: hsl(223, 64%, 98%);
+    border-radius: 10px;
+    width: 140px;
+}
+
+#minus {
+    border-radius: 10px 0 0 10px;
+    background-color: hsl(223, 64%, 98%);
+    border: 0px solid;
+}
+
+#plus {
+    border-radius: 0 10px 10px 0;
+    background-color: hsl(223, 64%, 98%);
+    border: 0px solid;
+}
+
+.counter button {
+    width: 40px;
+    height: 40px;
+}
+
+#Add_to_cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 40px;
+    font-weight: 700;
+    color: hsl(220, 13%, 13%);
+    background-color: hsl(26, 100%, 55%);
+    border: 0px solid;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+
+#Add_to_cart:hover {
+    background-color: hsl(26, 91%, 70%);
+}
+
+body.modal-open {
+    overflow: hidden;
+    /* ❌ ปิด scroll */
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+p {
+    color: hsl(220, 13%, 13%);
+}
+
+/* Optional: Make headings bold */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+    font-weight: 700;
+}
+
+.center_picture {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+.button_back {
+    border: 0px solid;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    margin-left: auto;
+}
+
+.button_back img {
+    width: 20px;
+    height: 20px;
+}
+
+.center_picture .Zoom_picture {
+    border: 0px solid;
+    background-color: transparent;
+}
+
+.center_picture .Zoom_picture img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.picture_button_Zoom {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Product_picture_Zoom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    /* สีดำโปร่งบังฉากหลัง */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* ให้อยู่หน้าสุด */
+}
+
+.arrow {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid;
+    transform: translateY(-60%);
+    background-color: hsl(223, 64%, 98%);
+}
+
+.arrow.left {
+    left: 500px;
+    /* ติดขอบซ้ายของรูป */
+}
+
+.arrow.right {
+    right: 500px;
+    /* ติดขอบขวาของรูป */
+}
+
+.arrow:hover img {
+    filter: invert(54%) sepia(94%) saturate(1783%) hue-rotate(347deg) brightness(101%) contrast(102%);
+}
+
+.button_back:hover img {
+    filter: invert(54%) sepia(94%) saturate(1783%) hue-rotate(347deg) brightness(101%) contrast(102%);
+}
